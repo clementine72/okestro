@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍길동 | Portfolio</title>
+    <style>
+        /* 변수 설정 (색상 및 폰트) */
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 헤더 섹션 */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* 섹션 공통 스타일 */
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 8px;
+            color: var(--accent-color);
+        }
+
+        /* 소개 섹션 */
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* 프로젝트 카드 레이아웃 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .project-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* 링크 스타일 */
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 연락처 및 링크 */
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 헤더 영역 -->
+        <header>
+            <h1>안녕하세요, <span>홍길동</span>입니다</h1>
+            <p>호기심 많고 기록을 좋아하는 프론트엔드 개발자</p>
+        </header>
+
+        <!-- 소개 영역 -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                새로운 기술을 배우고 적용하는 것을 즐깁니다. 복잡한 문제를 단순하고 직관적인 코드로 해결하는 것에 관심이 많습니다. 현재는 웹 표준과 사용자 경험(UX) 향상에 집중하고 있습니다.
+            </p>
+        </section>
+
+        <!-- 프로젝트 영역 -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <!-- 프로젝트 1 -->
+                <div class="card">
+                    <h3>멋진 웹서비스 A</h3>
+                    <p>사용자의 생산성을 높여주는 할 일 관리 웹 애플리케이션입니다. 상태 관리를 최적화하여 빠른 반응 속도를 자랑합니다.</p>
+                    <div>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                    </div>
+                    <a href="#" class="project-link">자세히 보기 &rarr;</a>
+                </div>
+
+                <!-- 프로젝트 2 -->
+                <div class="card">
+                    <h3>포트폴리오 페이지</h3>
+                    <p>GitHub Pages를 활용해 제작한 저만의 개인 포트폴리오 웹사이트입니다. 반응형으로 제작되었습니다.</p>
+                    <div>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">GitHub Pages</span>
+                    </div>
+                    <a href="#" class="project-link">자세히 보기 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락처 영역 -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="https://github.com/본인ID" target="_blank">GitHub</a>
+                <a href="mailto:your-email@example.com">Email</a>
+                <a href="https://your-blog.com" target="_blank">Blog</a>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer>
+            <p>&copy; 2026 홍길동. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
